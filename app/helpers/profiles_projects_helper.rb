@@ -1,0 +1,2 @@
+module ProfilesProjectsHelper
+end

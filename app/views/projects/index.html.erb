@@ -1,0 +1,35 @@
+<div class="all_file">
+
+</div>
+<h2 class="header1">
+  <%= "Project list" %>
+</h2>
+<table class="table table-condensed my_table">
+  <thead>
+  <tr>
+    <th>
+      <%= 'Project name' %>
+    </th>
+
+    <th>
+      <%= 'project desript' %>
+    </th>
+   </tr>
+  </thead>
+  </tr>
+  </thead>
+  <%= will_paginate @projects%>
+  <tbody id="projects">
+  <%= render @projects %>
+
+  </tbody>
+
+</table>
+
+<%= link_to 'Create project', new_project_path,class: 'btn btn-success' %>
+<%= link_to 'All profiles', profiles_path, class: 'btn btn-info' %>
+<%= render 'dialog' %>
+
+</div>
+
+

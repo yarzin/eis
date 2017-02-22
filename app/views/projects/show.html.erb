@@ -1,0 +1,20 @@
+<div class="index_style">
+
+  <p class="show_text">
+    <strong>Project name:</strong>
+    <%= @project.project_name %>
+  </p>
+  <p class="show_text">
+    <strong>Description:</strong>
+    <%= @project.description %>
+  </p>
+  <div>
+
+    <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-success' %>
+
+    <%= link_to 'destroy', @project, method: :delete, data: { confirm: 'You sure?' }, class: 'btn btn-danger' %>
+
+    <%= link_to 'Back', projects_path, class: 'btn btn-info' %>
+
+  </div>
+</div>

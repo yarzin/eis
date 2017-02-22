@@ -1,0 +1,13 @@
+<tr id="project_<%= project.id %>">
+  <td><%= project.project_name %></td>
+  <td><%= project.description %></td>
+
+
+  <td>
+    <%= link_to 'Edit', edit_project_path(project), remote: true, :class => 'btn btn-sm btn-info' %>
+    <%= link_to 'Delete', project, remote: true, method: :delete, :class => 'btn btn-sm btn-danger' %>
+    <%= link_to "Add project", profiles_projects_path(:project_id => project), :method => :post, :class => 'btn btn-success' %>
+  </td>
+
+  <td> <%= link_to 'Show', project, class: 'btn btn-default btn-sm' %> </td>
+</tr>

@@ -11,7 +11,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161130162312) do
+ActiveRecord::Schema.define(version: 20170220161857) do
+
+  create_table "charts", force: :cascade do |t|
+    t.integer  "project_id"
+    t.integer  "day"
+    t.string   "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.date     "birthday"
+    t.text     "biography"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
+
+  create_table "profiles_projects", force: :cascade do |t|
+    t.integer  "profile_id"
+    t.integer  "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "project_lists", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "profile_id"
+    t.integer  "project_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "project_name"
+    t.integer  "project_id"
+    t.text     "description"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

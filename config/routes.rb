@@ -3,9 +3,15 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  resources :profiles
+  resources :charts
+  resources :projects
+  resources :profiles_projects
+  #get '/projects/add_project/:project_id', to: 'projects#add', as: 'add_to_profile'
+  #post '/profiles/:profile_id/project/:project_id', to: 'projects#add', as: 'add_to_profile'
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
+  root 'profiles#index'
+ 
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

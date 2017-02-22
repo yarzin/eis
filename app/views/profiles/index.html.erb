@@ -1,0 +1,36 @@
+<div class="all_file">
+
+</div>
+<h2 class="header1">
+  <%= "All profiles" %>
+</h2>
+<table class="table table-condensed my_table">
+  <thead>
+  <tr>
+    <th>
+      <%= 'Image' %>
+    </th>
+    <th>
+      <%= 'Profile name' %>
+    </th>
+    <th>
+      <%= 'birthday' %>
+    </th>
+    <th>
+      <%= 'biography' %>
+    </th>
+
+
+  </tr>
+  </thead>
+
+  <tbody id="profiles">
+    <%= render @profiles %>
+  </tbody>
+  <%= will_paginate @profiles%>
+</table>
+<%= link_to 'All projects', projects_path, class: 'btn btn-info' %>
+<%= render 'dialog' %>
+
+</div>
+

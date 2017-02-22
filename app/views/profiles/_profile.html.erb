@@ -1,0 +1,19 @@
+<tr id="profile_<%= profile.id %>">
+  <td><%= link_to image_tag(profile.avatar.url(:thumb), class: 'media-object'), profile.avatar.url %></td>
+  <td><%= link_to "#{profile.name}", profile %></td>
+  <td><%= profile.birthday %></td>
+  <td><%= profile.biography %></td>
+
+
+  <td>
+    <% if current_user == profile.user %>
+    <%= link_to 'Edit', edit_profile_path(profile), remote: true, :class => 'btn btn-sm btn-info' %>
+    <% end %>
+    <%= link_to 'Delete', profile, remote: true, method: :delete, :class => 'btn btn-sm btn-danger' %>
+
+  </td>
+
+  <td> <%= link_to 'Show', profile, class: 'btn btn-default btn-sm' %> </td>
+</tr>
+
+
